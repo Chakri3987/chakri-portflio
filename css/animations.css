@@ -1,0 +1,340 @@
+/* =====================================================
+   BOTSA CHAKRI PORTFOLIO
+   ANIMATIONS
+===================================================== */
+
+
+/* ================= PAGE LOAD ================= */
+
+.hero-text {
+    animation: fadeUp 0.9s ease both;
+}
+
+.hero-image {
+    animation: fadeRight 1s ease 0.15s both;
+}
+
+
+/* ================= FADE UP ================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ================= FADE RIGHT ================= */
+
+@keyframes fadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ================= FADE LEFT ================= */
+
+@keyframes fadeLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ================= FLOATING EFFECT ================= */
+
+.hero-image img {
+    animation:
+        profileFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes profileFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* ================= PROFILE GLOW ================= */
+
+.hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        rgba(21, 156, 255, 0.12);
+
+    filter: blur(70px);
+
+    border-radius: 50%;
+
+    z-index: -1;
+
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+        transform:
+            translate(-50%, -50%)
+            scale(0.9);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
+    }
+
+}
+
+
+/* ================= BUTTON HOVER ================= */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: 0.6s;
+}
+
+.btn:hover::before {
+    left: 130%;
+}
+
+
+/* ================= CARD HOVER ================= */
+
+.skill-card,
+.stat-card,
+.achievement-card,
+.project-card {
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* ================= PROJECT IMAGE ================= */
+
+.project-image {
+    overflow: hidden;
+}
+
+.project-image img {
+    transition:
+        transform 0.6s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.04);
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background:
+        rgba(2, 8, 23, 0.96);
+
+    box-shadow:
+        0 5px 30px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* ================= SECTION REVEAL ================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ================= STAGGER EFFECT ================= */
+
+.skill-card:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.skill-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.skill-card:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.skill-card:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.skill-card:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
+.skill-card:nth-child(6) {
+    transition-delay: 0.3s;
+}
+
+
+/* ================= TECH TAG ================= */
+
+.tech-tags span {
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.tech-tags span:hover {
+    background:
+        rgba(21, 156, 255, 0.16);
+
+    color: white;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ================= SOCIAL LINKS ================= */
+
+.social-links a {
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.social-links a:hover {
+    transform:
+        translateY(-3px);
+}
+
+
+/* ================= FOOTER IMAGE ================= */
+
+.footer-profile img {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.footer-profile img:hover {
+    transform:
+        scale(1.04);
+
+    box-shadow:
+        0 0 45px
+        rgba(21, 156, 255, 0.35);
+}
+
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
